@@ -1,0 +1,258 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anushka Darekar - Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #121212;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #1f1f1f;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h2 {
+      font-size: 1.5rem;
+      color: #ff4081;
+    }
+
+    header ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    header ul li a {
+      color: #e0e0e0;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    header ul li a:hover {
+      color: #ff4081;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: linear-gradient(145deg, #1c1c1c, #222);
+      position: relative;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      animation: slideUp 1.5s ease-in-out;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      color: #bbb;
+      margin-bottom: 2rem;
+    }
+
+    .hero .btn {
+      padding: 12px 25px;
+      background: #ff4081;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .hero .btn:hover {
+      background: #e91e63;
+    }
+
+    /* Certificates */
+    .vertical-stack {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 3rem 2rem;
+    }
+
+    .photo-item {
+      background: #1f1f1f;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .photo-item img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    }
+
+    .photo-item:hover {
+      transform: scale(1.05);
+    }
+
+    .photo-item p {
+      margin-top: 0.5rem;
+      font-weight: bold;
+      color: #ffb300;
+    }
+
+    /* Skills Section */
+    .skills-section {
+      padding: 3rem 2rem;
+      background: #1c1c1c;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      border-left: 4px solid #ffb300;
+      padding-left: 15px;
+    }
+
+    .skill {
+      margin-bottom: 25px;
+    }
+
+    .skill label {
+      font-weight: bold;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .bar {
+      background: #333;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 22px;
+      margin-top: 5px;
+    }
+
+    .progress {
+      height: 100%;
+      width: 0%;
+      text-align: right;
+      padding-right: 10px;
+      font-weight: bold;
+      color: black;
+      line-height: 22px;
+      transition: width 2s ease-out;
+    }
+
+    .orange { background: linear-gradient(to right, orange, darkorange); }
+    .blue { background: linear-gradient(to right, #00c6ff, #0072ff); }
+    .red { background: linear-gradient(to right, #ff4e50, #f9d423); }
+    .green { background: linear-gradient(to right, #00ff99, #00cc66); }
+    .purple { background: linear-gradient(to right, #a64ca6, #bf80ff); }
+
+    footer {
+      background: #1f1f1f;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #bbb;
+      margin-top: 2rem;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes slideUp {
+      from {transform: translateY(30px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h2><i class="fas fa-linux"></i> Anushka Darekar</h2>
+    <nav>
+      <ul>
+        <li><a href="portfolio--3.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="about--3.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li><a href="skills--3.html"><i class="fas fa-laptop-code"></i> Skills</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Hello, I'm Anushka</h1>
+    <p><i class="fas fa-cogs"></i> Engineer | <i class="fas fa-code"></i> Coder </p>
+    <a href="#skills" class="btn">Explore Skills</a>
+  </section>
+
+  <!-- Certificates -->
+  <section class="vertical-stack">
+    <h2 class="section-title">📜 Certificates</h2>
+    <div class="photo-item"><a href="https://i.postimg.cc/c19dFQP7/3.jpg"><img src="https://i.postimg.cc/c19dFQP7/3.jpg" alt="Python 1"></a><p>Python</p></div>
+    <div class="photo-item"><a href="https://i.postimg.cc/cCbZ6Sfk/2.jpg"><img src="https://i.postimg.cc/cCbZ6Sfk/2.jpg" alt="Python 2"></a><p>Python</p></div>
+    <div class="photo-item"><a href="https://i.postimg.cc/qRpp5Qkw/5.jpg"><img src="https://i.postimg.cc/qRpp5Qkw/5.jpg" alt="Python 3"></a><p>Python</p></div>
+    <div class="photo-item"><a href="https://i.postimg.cc/MpJN5HZb/32.jpg"><img src="https://i.postimg.cc/MpJN5HZb/32.jpg" alt="Python 3"></a><p>Python</p></div>
+    <div class="photo-item"><a href="https://i.postimg.cc/sxt8tDYz/C.jpg"><img src="https://i.postimg.cc/sxt8tDYz/C.jpg" alt="C"></a><p>C Language</p></div>
+    <div class="photo-item"><a href="https://i.postimg.cc/wTMjzWDb/1.jpg"><img src="https://i.postimg.cc/wTMjzWDb/1.jpg" alt="Linux"></a><p>Linux</p></div>
+    <div class="photo-item"><a href="https://i.postimg.cc/pdbWDR4g/l2.jpg"><img src="https://i.postimg.cc/pdbWDR4g/l2.jpg" alt="Linux"></a><p>Linux</p></div>
+    
+  </section>
+  <script>
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('.progress').forEach(bar => {
+        const top = bar.getBoundingClientRect().top;
+        const winHeight = window.innerHeight;
+        if (top < winHeight - 50) {
+          bar.style.transition = "width 1.5s ease-out";
+          const finalWidth = bar.textContent;
+          bar.style.width = finalWidth;
+        }
+      });
+    });
+  </script>
+  <!-- Skills -->
+  <section id="skills" class="skills-section">
+    <h2 class="section-title">🛠 Coding Skills</h2>
+    <div class="skill"><label><i class="fab fa-cuttlefish"></i> C Language</label>
+      <div class="bar"><div class="progress orange" data-progress="75%">75%</div></div>
+    </div>
+    <div class="skill"><label><i class="fab fa-python"></i> Python</label>
+      <div class="bar"><div class="progress blue" data-progress="65%">65%</div></div>
+      </div>
+      <div class="skill"><label><i class="fab fa-HTML"></i> HTML</label>
+   <div class="bar"><div class="progress green" data-progress="85%">85%</div></div>
+    </div>
+        <div class="skill"><label><i class="fab fa-CSS"></i> CSS</label>
+            <div class="bar"><div class="progress blue" data-progress="75%">75%</div></div>
+
+            </div><div class="skill"><label><i class="fab fa-linux"></i>  LINUX</label>
+                <div class="bar"><div class="progress red" data-progress="55%">55%</div></div>
+                </div>

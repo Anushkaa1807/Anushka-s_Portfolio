@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Advanced Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    header {
+      background: #13072f;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      color: #e0e0e0;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #9b59b6;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: linear-gradient(135deg, #232323, #1f1f1f);
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-photo {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      margin-bottom: 2rem;
+      object-fit: cover;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 10px 20px;
+      background: #5e60ce;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #6930c3;
+    }
+
+    .btn i {
+      margin-right: 8px;
+    }
+
+    .contact, .references {
+      background: #a37db8;
+      padding: 2rem;
+      margin: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(17, 188, 129, 0.1);
+    }
+
+    .contact h2, .references h2 {
+      color: #fff;
+    }
+
+    .contact-details p, .references p {
+      color: #f0f0f0;
+      font-size: 1.1em;
+      margin: 10px 0;
+    }
+
+    footer {
+      background: #1f1f1f;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    .contact-section {
+  background: radial-gradient(circle at top left, #1e1e2f, #121212);
+  padding: 60px 20px;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.contact-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #87cefa;
+  animation: slideDown 1s ease-in;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  animation: slideUp 1.2s ease-in-out;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  font-size: 1em;
+  color: #ffffff;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 8px;
+  background: #222;
+  color: #fff;
+  font-size: 1em;
+  transition: border 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border: 2px solid #87cefa;
+  background-color: #2a2a2a;
+}
+
+button[type="submit"] {
+  display: inline-block;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 198, 255, 0.4);
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>My Portfolio</h1>
+    <nav>
+        <ul>
+            <li><a href="portfolio--3.html">Home</a></li>
+            <li><a href="about--3.html">Contact</a></li>
+            <li><a href="skills--3.html">Skills</a></li>
+        </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero" data-aos="fade-up">
+    <h1>Welcome to My Portfolio</h1>
+    <p>Crafting experiences, one project at a time.</p>
+    <img src="https://i.postimg.cc/RFm0z4Tc/ANu2.jpg" alt="Anushka Darekar" class="hero-photo"/>
+    <div>
+      <a href="https://www.linkedin.com/in/anushka-darekar-03350b30b" target="_blank" class="btn">
+        <i class="fab fa-linkedin"></i>LinkedIn
+      </a>
+      <a href="#" target="_blank" class="btn"><i class="fas fa-graduation-cap"></i>Internshala</a>
+      <a href="#" target="_blank" class="btn"><i class="fab fa-telegram"></i>Telegram</a>
+      <a href="https://x.com/AnushkaDar18241" target="_blank" class="btn"><i class="fab fa-twitter"></i>Twitter</a>
+
+    </div>
+  </section>
+
+  <section id="contact" class="contact" data-aos="fade-right">
+    <h2>Contact Me</h2>
+    <p>If you'd like to get in touch, feel free to call or email me:</p>
+    <div class="contact-details">
+      <p><strong>Phone:</strong> +91 9096787xxx</p>
+      <p><strong>Email:</strong> anushka.anushkadarekar@gmail.com</p>
+    </div>
+  </section>
+
+  <section id="references" class="references" data-aos="fade-left">
+    <h2>References</h2>
+    <p>If you want to know about me through professionals, here are references:</p>
+    <div class="contact-details">
+      <p><strong>Name:</strong> Nitin Darekar</p>
+      <p><strong>Phone:</strong> +91 9960866670</p>
+      <p><strong>Name:</strong> Sachin Neshrikar</p>
+      <p><strong>Phone:</strong> +91 7977005944</p>
+    </div>
+  </section>
+  <section id="contact" class="contact-section">
+    <h2><i class="fas fa-envelope"></i> Contact Me</h2>
+    <form class="contact-form" action="mailto:your-email@example.com" method="POST" enctype="text/plain">
+      <div class="form-group">
+        <label for="name"><i class="fas fa-user"></i> Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your Name">
+      </div>
+  
+      <div class="form-group">
+        <label for="email"><i class="fas fa-at"></i> Email</label>
+        <input type="email" id="email" name="email" required placeholder="you@example.com">
+      </div>
+  
+      <div class="form-group">
+        <label for="subject"><i class="fas fa-tag"></i> Subject</label>
+        <input type="text" id="subject" name="subject" required placeholder="Subject">
+      </div>
+  
+      <div class="form-group">
+        <label for="message"><i class="fas fa-comment-dots"></i> Message</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Type your message..."></textarea>
+      </div>
+  
+      <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+    </form>
+  </section>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  
+  <footer>
+    <p>&copy; 2025 Anushka Darekar. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+</body>
+</html>
